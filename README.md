@@ -21,4 +21,12 @@
  - **Exception Handling**: Service throws exceptions, Controller catches and convers to HTTP responses
  - **Password Security**: BCrypt hashing for passwords
  - **Input Validation**: Server-side validation in controller before calling service
-   
+
+### Testing
+- **Unit Tests**: JUnit 5 tests for UserService (testslogic in isolation)
+- **Integration Tests**: Tests for UserRepository with actual database (tests JPA query derivation)
+- **API Tests**: Postman tests for all endpoints (14 test cases covering success and error scenarios)
+  - Registration: valid input, duplicate email, duplicate username, missing fields, invalid password length
+  - Login: correct credentials, wrong password, non-existent user, missing fields
+  - User retrieval: valid ID, non-existent ID
+  - Verified correct HTTP status codes (201, 400, 401, 404, 409) and JSON responses
