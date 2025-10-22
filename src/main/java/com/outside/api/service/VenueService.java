@@ -29,7 +29,7 @@ public class VenueService {
 
     public Venue updateVenue(Long id, Venue venueDetails) {
         Venue venue = venueRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Venue not found with id " + id));
+                .orElseThrow(() -> new RuntimeException("Venue not found"));
         venue.setName(venueDetails.getName());
         venue.setAddress(venueDetails.getAddress());
         venue.setLatitude(venueDetails.getLatitude());
