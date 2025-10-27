@@ -18,7 +18,7 @@ public class Venue {
     private Double latitude;
 
     @Column (nullable = false)
-    private double longitude;
+    private Double longitude;
     private String category;
     private String phoneNumber;
     private String website;
@@ -57,8 +57,8 @@ public class Venue {
     public Double getLatitude() { return latitude; }
     public void setLatitude(Double latitude) { this.latitude = latitude; }
 
-    public double getLongitude() { return longitude; }
-    public void setLongitude(double longitude) { this.longitude = longitude; }
+    public Double getLongitude() { return longitude; }
+    public void setLongitude(Double longitude) { this.longitude = longitude; }
 
     public String getCategory() { return category; }
     public void setCategory(String category) { this.category = category; }

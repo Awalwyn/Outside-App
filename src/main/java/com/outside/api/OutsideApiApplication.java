@@ -3,8 +3,10 @@ package com.outside.api;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
+@EnableScheduling
 public class OutsideApiApplication {
     public static void main(String[] args) {
         ApplicationContext context = SpringApplication.run(OutsideApiApplication.class, args);

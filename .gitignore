@@ -29,3 +29,4 @@ build/
 application-prod.properties
 .env
 secrets/
+src/main/resources/application.properties

@@ -19,7 +19,3 @@ public interface VenueRepository extends JpaRepository<Venue, Long> {
     @Query("SELECT v FROM Venue v WHERE LOWER(v.name) LIKE LOWER(CONCAT('%', :namePart, '%'))")
     List<Venue> searchByName(String namePart);
 }
-
-    
-    
-
