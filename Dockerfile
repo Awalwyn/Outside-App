@@ -8,8 +8,9 @@ COPY mvnw .
 COPY .mvn .mvn
 RUN mvn dependency:go-offline -B
 
-# Copy source code
-COPY src ./src
+# Copy ONLY source code (Java files)
+COPY src/main/java ./src/main/java
+COPY src/main/resources/application-prod.properties ./src/main/resources/application-prod.properties
 
 # Build the application
 RUN mvn clean package -DskipTests
@@ -24,8 +25,6 @@ COPY --from=build /app/target/outside-api-0.0.1-SNAPSHOT.jar app.jar
 # Expose port
 EXPOSE 8080
 
-# Set environment variables (Render will override these)
-ENV SPRING_PROFILES_ACTIVE=prod
-
 # Run the application
-ENTRYPOINT ["java", "-jar", "app.jar"]
+# Render will pass environment variables at runtime
+ENTRYPOINT ["java", "-Dspring.profiles.active=prod", "-jar", "app.jar"]

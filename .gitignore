@@ -26,7 +26,10 @@ build/
 
 ### VS Code ###
 .vscode/
-application-prod.properties
+
+### Sensitive Files ###
+src/main/resources/application-prod.properties
+src/main/resources/application.properties
+src/main/resources/application.properties.example
 .env
 secrets/
-src/main/resources/application.properties
